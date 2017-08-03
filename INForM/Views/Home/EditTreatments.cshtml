@@ -1,0 +1,45 @@
+﻿@model INForM.Models.TreatmentEidtModel
+@{
+    ViewBag.Title = "EditTreatments";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Edit Treatments</h1>
+    </div>
+    
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        @using (Html.BeginForm("EditTreatments", "Home", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <label for="TName">Treatment Name</label>
+                <input type="text" class="form-control" id="TName" value="@Model.TreatmentName">
+            </div>
+            <div class="form-group">
+                <label for="TDsic">Treamtment Discription</label>
+                <textarea rows="2" class="form-control" id="TDsic" name="TDsic">@Model.TreatmentDiscription</textarea>
+            </div>
+            <div class="form-group">
+                <label for="SName">Supplier Name</label>
+                <input type="text" class="form-control" id="SName" value="@Model.SupplierName">
+            </div>
+            <div class="form-group">
+                <label for="billQtyName">Bill Qty Name</label>
+                <input type="text" class="form-control" id="billQtyName" value="@Model.BillofQty">
+            </div>
+            <div class="form-group">
+                <label for="TUR">Total Unit Rate</label>
+                <input type="text" class="form-control" id="TUR" value="@Model.TotalUnit">
+            </div>
+            <div class="form-group">
+                <label for="tTyoe">Treatment Type</label>
+                <input type="text" class="form-control" id="tTyoe" value="@Model.TreatType">
+            </div>
+            <button type="submit" class="btn btn-default" id="AddTreatment">Save changes</button>
+        }
+    </div>
+</div>
+
